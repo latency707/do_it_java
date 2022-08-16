@@ -8,7 +8,7 @@ package ifexample;
 
 public class IfExample2 {
 	public static void main(String[] args) {
-		int age = 9;
+		int age = 69;
 		int charge;
 		
 		if (age < 8) {
@@ -24,12 +24,22 @@ public class IfExample2 {
 		else if (age < 20) {
 			charge = 2500;
 			System.out.println("중학생입니다.");
-		}
+		} 
 		
-		else {
+		else if (age < 60) {
 			charge = 3000;
 			System.out.println("성인입니다.");
 		}
+		
+		else {
+			charge = 0;
+			System.out.println("경로우대입니다.");
+		}
+		
+		System.out.println("입장료는 " + charge + "원 입니다.");
 	}
 
+	// Q) age 조건이 60세 이상이면 '경로우대입니다.' 와 '입장료는 0원입니다.' 가 출력되도록 수정하시오.
+	// A) 완료  
+	
 }
