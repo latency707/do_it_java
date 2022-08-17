@@ -4,6 +4,8 @@
  * 
  * 이때 switch-case문으로 코드를 구성하는 것이 코딩이 깔끔하고 가독성도 높음
  * switch-case문은 주로 조건이 하나의 변수값이나 상수값으로 구분되며 조건식이 복잡하지 않은 경우에 적합함 
+ * 
+ * 자바 7부터는 case 값에 정수 값 뿐 아니라 문자열도 사용할 수 있게 되어 보다 간결한 프로그램 구현이 가능해짐.
 */
 
 // 선수 성적 구분 switch-case 문 만들기
@@ -15,13 +17,13 @@ public class SwitchCase {
 		char medalColor;
 		
 		switch(rank) {
-		case 1 : medalColor = 'G';
+		case 99 : medalColor = 'G';
 		break;
 		
-		case 2 : medalColor = 'S';
+		case 98 : medalColor = 'S';
 		break;
 		
-		case 3: medalColor = 'B';
+		case 97: medalColor = 'B';
 		
 		default:
 			medalColor ='A';
