@@ -18,8 +18,9 @@ public class FunctionTest {
 		int mul1 = mul(num1, num2);
 		System.out.println(mul1);
 		
-		int div1 = div(num1, num2);
+		double div1 = div(num1, num2);
 		System.out.println(div1);
+		
 	}
 	
 	// add 메서드 정의
@@ -43,8 +44,8 @@ public class FunctionTest {
 	}
 	
 	// div 메서드 정의
-	public static int div(int n1, int n2) {
-		int result = n1 / n2 ;
+	public static double div(int n1, int n2) {
+		double result =  n1 / (double) n2 ;	// 나눗셈을 할 때는 반드시 하나의 값이 실수형이어야 함
 		return result;
 	}
 	
