@@ -21,7 +21,7 @@
 // 학생 클래스 만들기
 package classpart;
 
-public class Student {
+public class StudentProto {
 	// 멤버 변수 선언
 	int studentID;
 	String studentName;

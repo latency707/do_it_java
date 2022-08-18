@@ -11,7 +11,7 @@
 // 생성한 Student 클래스에 main() 함수 포함하기
 package classpart;
 
-public class StudentAdv3 {
+public class Student {
 	int studentID;
 	String studentName;
 	int grade;
@@ -22,8 +22,8 @@ public class StudentAdv3 {
 	}
 	
 	public static void main(String[] args) {
-		StudentAdv3 studentAhn = new StudentAdv3(); // 클래스 생성
-		studentAhn.studentName = "안연수";
+		Student studentAhn = new Student(); // 클래스 생성
+		studentAhn.studentName = "Yeon Soo Ahn";
 		
 		System.out.println(studentAhn.studentName);
 		System.out.println(studentAhn.getStudentName());
