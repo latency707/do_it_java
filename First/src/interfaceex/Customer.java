@@ -1,5 +1,28 @@
-package interfaceex;
+/*
+ * 한 클래스가 여러 인터페이스를 구현하는 경우
+ * 한 클래스가 여러 클래스를 상속받으면 메서드 호출이 모호해지는 문제가 발생할 수 있음
+ * 반면 인터페이스는 구현 코드나 멤버변수를 갖지 않기 때문에 한 클래스가 여러 개의 인터페이스를 구현할 수 있음
+ * 
+ * 
+ * 두 인터페이스의 디폴트 메서드가 중복되는 경우
+ * 정적 메서드는 인스턴스 생성과 상관없이 사용할 수 있음. 각각의 인터페이스에 이름이 같은 정적메서드가 있더라도 interfaceA.method(), interfaceB.method() 로 특정하여 호출이 가능함
+ * 반면 디폴트 메서드는 인스턴스를 생성해야 호출할 수 있는 메서드이므로 이름이 같은 디폴트메서드가 공존할 경우 문제가 됨
+ * 
+ * 중복 디폴트메서드를 공유하는 클래스에서 재정의를 하면 클래스 생성후 사용 시 재정의된 메서드가 호출됨
+ * 주의할 점은 메서드 재정의 후에 인터페이스 자료형 메서드를 호출하면 인터페이스 자체 디폴트 메서드가 아닌 클래스에서 재정의한 메서드가 호출된다는 점 
+*/
 
-public class Customer {
+package interfaceex;
+// Buy, Sell 2개의 인터페이스를 모두 구현한 클래스 Customer
+public class Customer implements Buy, Sell{
+	@Override
+	public void sell() {
+		System.out.println("판매하기");
+	}
+	
+	@Override
+	public void buy() {
+		System.out.println("구매하기");
+	}
 
 }
