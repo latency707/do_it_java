@@ -14,5 +14,5 @@ package bookshelf;
 
 public class Q1toQ6 {
 	public static void main(String[] args) {
-
+	}
 }
