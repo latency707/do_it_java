@@ -20,13 +20,17 @@
  * ArrayList<String> list = new ArrayList<String>();
  * ===== 위아래 코드는 동일한 결과 =====
  * var list = new ArrayList<String>(); // list가 지역변수로 선언된다는 전제하에 가능한 코드
-*/
+ *
+ ** 제네릭 구현시 형변환을 하지 않아도 되는 이유
+ * 제네릭 클래스를 사용하면 일단 대입된 자료형이 잘 쓰였는지 확인한 후,
+ * class 파일을 생성할 때 T를 사용한 곳에 지정된 자료형에 따라 컴파일을 하기때문에 형변환이 필요없음
+ * 즉 컴파일러가 자료형을 확인해주기 때문에 안정적이면서 형변환 코드가 줄어듦
+ */
+
+// Q) 플라스틱 액체가 재료인 프린터 선언해보기
+// A) Plastic 클래스는 상단에 선언
 
 package generics;
-
-class Plastic {
-	
-}
 
 public class GenericPrinter<T> {
 	private T material;
@@ -34,27 +38,12 @@ public class GenericPrinter<T> {
 	public void setMaterial(T material) {
 		this.material = material;
 	}
-
+	
 	public T getMaterial() {
 		return material;
 	}
 	
-	public static void main(String[] args) {
-		// 파우더가 재료인 제네릭 클래스 프린터 사용하기
-		GenericPrinter<Powder> powderPrinter = new GenericPrinter<Powder>(); // GenericPrinter<Powder>: 제네릭 자료형 = 매개변수화된 자료형
-		powderPrinter.setMaterial(new Powder()); // Powder : 대입된 자료형
-		Powder powder = powderPrinter.getMaterial(); // 명시적 형변환 x
-		/*
-		 ** 제네릭 구현시 형변환을 하지 않아도 되는 이유
-		 * 제네릭 클래스를 사용하면 일단 대입된 자료형이 잘 쓰였는지 확인한 후,
-		 * class 파일을 생성할 때 T를 사용한 곳에 지정된 자료형에 따라 컴파일을 하기때문에 형변환이 필요없음
-		 * 즉 컴파일러가 자료형을 확인해주기 때문에 안정적이면서 형변환 코드가 줄어듦
-		 */
-		
-		// Q) 플라스틱 액체가 재료인 프린터 선언해보기
-		// A) Plastic 클래스는 상단에 선언
-		GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
-		plasticPrinter.setMaterial(new Plastic());
-		Plastic plastic = plasticPrinter.getMaterial();
+	public String toString() {
+		return material.toString();
 	}
 }
