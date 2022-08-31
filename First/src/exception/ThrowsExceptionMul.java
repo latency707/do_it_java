@@ -21,7 +21,7 @@ public class ThrowsExceptionMul {
 		ThrowsExceptionMul test = new ThrowsExceptionMul();
 		try {
 			test.loadClass("a.txt", "java.lang.String");
-		} catch (FileNotFoundException e) {s-p
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
